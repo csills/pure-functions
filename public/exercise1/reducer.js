@@ -6,8 +6,12 @@ let initialState = {
 //     state object
 const reducer = (state = initialState, action) => {
 	if (action.type == "INCREMENT") {
-		state.counterValue++;
-		return state;
+		//Old Code:
+		//state.counterValue++;
+		//return state;
+		let stateCopy = {...state}; // same as: Object.assign({}, state);
+		stateCopy.counterValue++;
+		return stateCopy;
 	} else {
 		return state;
 	}
